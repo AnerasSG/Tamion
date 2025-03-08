@@ -1,0 +1,432 @@
+/* Основные стили страницы */
+.game-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Стили для шапки */
+.game-header {
+  background-color: #3b4cca;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.game-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.player-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.player-info span {
+  font-weight: 600;
+}
+
+.logout-button {
+  background-color: #ff5350;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+  background-color: #e74c3c;
+}
+
+/* Основной контент */
+.game-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Загрузка */
+.game-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.pokeball-spinner {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, #ff0000 0%, #ff0000 50%, #ffffff 50%, #ffffff 100%);
+  position: relative;
+  animation: spin 1.5s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.pokeball-spinner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border: 4px solid #333;
+  border-radius: 50%;
+}
+
+.pokeball-spinner::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 2px);
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #333;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Сообщение об ошибке */
+.game-error {
+  text-align: center;
+  padding: 2rem;
+  background-color: #ffebee;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+
+.game-error button {
+  background-color: #3b4cca;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+/* Макет игровой страницы */
+.game-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Карточка покемона */
+.pokemon-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pokemon-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 1rem;
+}
+
+.pokemon-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+.pokemon-level {
+  background-color: #ffcb05;
+  color: #333;
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.pokemon-image {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.pokemon-placeholder {
+  width: 120px;
+  height: 120px;
+  background-color: #3b4cca;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.pokemon-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pokemon-types {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.type-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+}
+
+/* Типы покемонов */
+.type-normal { background-color: #A8A878; }
+.type-fire { background-color: #F08030; }
+.type-water { background-color: #6890F0; }
+.type-grass { background-color: #78C850; }
+.type-electric { background-color: #F8D030; }
+.type-ice { background-color: #98D8D8; }
+.type-fighting { background-color: #C03028; }
+.type-poison { background-color: #A040A0; }
+.type-ground { background-color: #E0C068; }
+.type-flying { background-color: #A890F0; }
+.type-psychic { background-color: #F85888; }
+.type-bug { background-color: #A8B820; }
+.type-rock { background-color: #B8A038; }
+.type-ghost { background-color: #705898; }
+.type-dragon { background-color: #7038F8; }
+.type-dark { background-color: #705848; }
+.type-steel { background-color: #B8B8D0; }
+.type-fairy { background-color: #EE99AC; }
+
+.pokemon-ability h3, .pokemon-nature h3, .pokemon-stats h3, .pokemon-moves h3, .pokemon-ivs h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.nature-buff {
+  color: #4caf50;
+  font-weight: 600;
+}
+
+.nature-debuff {
+  color: #f44336;
+  font-weight: 600;
+}
+
+/* Стили для статов */
+.stat-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stat-label {
+  width: 100px;
+  font-size: 0.9rem;
+}
+
+.stat-value {
+  width: 30px;
+  text-align: right;
+  font-weight: 600;
+}
+
+.stat-bar-container {
+  flex: 1;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.stat-bar {
+  height: 100%;
+  border-radius: 5px;
+}
+
+.hp-bar { background-color: #ff5959; }
+.atk-bar { background-color: #f5ac78; }
+.def-bar { background-color: #fae078; }
+.spa-bar { background-color: #9db7f5; }
+.spd-bar { background-color: #a7db8d; }
+.spe-bar { background-color: #fa92b2; }
+
+/* Атаки */
+.moves-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.move-item {
+  background-color: #f5f5f5;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  border-left: 4px solid #3b4cca;
+}
+
+/* IVs сетка */
+.ivs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+
+.iv-item {
+  background-color: #f5f5f5;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Панель действий */
+.game-actions {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.game-actions h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin: 0;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.75rem;
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.action-button {
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  color: white;
+}
+
+.action-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.explore { background-color: #3498db; }
+.train { background-color: #f39c12; }
+.battle { background-color: #e74c3c; }
+.catch { background-color: #2ecc71; }
+.shop { background-color: #9b59b6; }
+
+.player-progress {
+  margin-top: 1.5rem;
+}
+
+.progress-bar {
+  height: 12px;
+  background-color: #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 6px;
+}
+
+/* Футер */
+.game-footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 1024px) {
+  .game-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .action-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .pokemon-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .moves-list, .ivs-grid {
+    grid-template-columns: 1fr;
+  }
+}

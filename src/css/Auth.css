@@ -1,0 +1,115 @@
+/* Стили для компонентов авторизации */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f8ff;
+  background-image: url('https://via.placeholder.com/1920x1080?text=Pokemon+Background');
+  background-size: cover;
+  background-position: center;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #3b4cca;
+  font-size: 1.8rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #2a75bb;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #ffcb05;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 203, 5, 0.25);
+}
+
+.auth-button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background-color: #ffcb05;
+  color: #3b4cca;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.auth-button:hover {
+  background-color: #ffd642;
+}
+
+.auth-button:active {
+  transform: translateY(1px);
+}
+
+.auth-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.auth-links {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.auth-links a {
+  color: #3b4cca;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.auth-links a:hover {
+  color: #2a75bb;
+  text-decoration: underline;
+}
+
+.error-message {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background-color: #ffebee;
+  border-left: 5px solid #ef5350;
+  color: #b71c1c;
+  border-radius: 4px;
+}
+
+.success-message {
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background-color: #e8f5e9;
+  border-left: 5px solid #66bb6a;
+  color: #2e7d32;
+  border-radius: 4px;
+}
